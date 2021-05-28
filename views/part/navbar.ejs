@@ -1,0 +1,33 @@
+<nav class="navbar navbar-expand-md navbar-inverse navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="/">Mhibio Board</a>
+    </div>
+    <div id="navbar" class="navbar-collapse collapse">
+
+      <ul class="nav navbar-nav">
+        <li><a href="/">Home</a></li>
+        <li><a href="/userlist">Userlist</a></li>
+        <li class="dropdown">
+          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Board Menu
+            <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/post/write">Write Post</a></li>
+              <li><a href="/post/manage">Manage Post</a></li>
+              <li><a href="/post/list">Post View</a></li>
+            </ul>    
+        </li>
+      </ul>
+      
+      <ul class="nav navbar-nav navbar-right">
+      <% if( !isAuthenticated  ) { %> 
+        <li><a href="/user/login">Login</a></li>
+        <li><a href="/user/register">Register</a></li>
+      <% } else { %>
+        <li><a href="#">Profile</a></li>
+        <li><a href="/logout">Logout</a></li>
+      <% } %>
+      </ul>
+    </div>
+  </div>
+</nav>

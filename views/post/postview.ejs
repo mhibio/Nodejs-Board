@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <%- include('../part/header.ejs') %>
+    <title><%= title %></title>
+  </head>
+  <body>
+    <%- include("../part/navbar.ejs") %>
+    
+    <main role="main" class="container">
+      <div class="container">
+
+          <div>
+            <h1>Title</h1>
+            <%= data.title %>
+            <br>
+          </div>
+          <div>
+            <h2>Content</h2>
+            <%= data.content %>
+          </div>
+
+          <div>
+              <h3>Writer</h3>
+              <%= data.writer %>
+          </div>
+          
+          <div>
+            <h3>viwes</h3>
+            <%= data.views %>
+            </div>
+            
+          <div>
+            <h3>data</h3>
+            <%= data.date %>
+        </div>
+
+        <br>
+        <a class="btn-lg btn btn-primary" href="/post/list" role="button">Back</a>
+      </div>
+    </main>
+  </body>
+</html>

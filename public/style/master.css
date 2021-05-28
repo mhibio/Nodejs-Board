@@ -1,0 +1,12 @@
+body {
+    padding-top: 80px;
+}
+
+#sm-form {
+    width: 30%;
+    margin: auto;
+}
+
+#list-group-item-dark {
+    background-color: #d3d3d4;
+}

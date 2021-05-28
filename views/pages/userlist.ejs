@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <%- include('../part/header.ejs') %>
+    <title><%= title %></title>
+  </head>
+  <body>
+    <%- include("../part/navbar.ejs") %>
+
+    <main role="main" class="container">
+        <div class="container">
+          <div class="list-group">
+            <a href="#" class="list-group-item list-group-item-action active" aria-current="true">
+              User Name
+            </a>
+
+            <% for(var i = 0; i < data.length; i++) { %>
+              <% if( i%2 == 0 ) { %>
+                <a href="#" class="list-group-item list-group-item-action list-group-item-light"><%= data[i].name %></a>
+              <% } else { %>
+                <a href="#" class="list-group-item list-group-item-action" id="list-group-item-dark"><%= data[i].name %></a>
+              <% } %>
+            <% } %>
+          </div>
+          
+        </div>
+    </main>
+    
+  </body>
+</html>
