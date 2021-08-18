@@ -22,7 +22,7 @@ module.exports = (req, res) => {
         return ;
     }
 
-    conn.query(format("Select * from post where idx ={0};"  , req.params.idx), function(err, result) {
+    conn.query(format("Select * from post where idx ={0};"  , conn.escape(req.params.idx)), function(err, result) {
         if(err) throw err;
         conn.query(format("update post set views = views + 1 where idx={0};", req.params.idx), function(err, result) {
             if(err) throw err;
