@@ -24,7 +24,7 @@ module.exports = (req, res) => {
         return ;
     }
 
-    conn.query(format("Insert Into post (title, content, writer) values (\"{0}\", \"{1}\", \"{2}\");", req.body.title, req.body.content, sess.userid), function(err, result) {
+    conn.query(format("Insert Into post (title, content, writer) values (\"{0}\", \"{1}\", \"{2}\");", conn.escape(req.body.title), conn.escape(req.body.content), conn.escape(sess.userid)), function(err, result) {
         if(err) throw err;
         res.render("./part/alert", {msg:"Post Sucssess!", url:"/post/list"})
         return ;
